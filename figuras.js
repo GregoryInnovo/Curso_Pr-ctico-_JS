@@ -1,106 +1,101 @@
 // code of square
-console.group("Cuadrado")
-const ladoCuadrado = 5
-
-console.log(`Lados del cuadrado miden: ${ladoCuadrado}cm`)
-
 function perimetroCuadrado(lado) {
-    return lado * 4
+  return lado * 4;
 }
-
-perimetroCuadrado()
-
-// console.log(`El perímetro del cuadrado es: ${perimetroCuadrado}cm`)
 
 function areaCuadrado(lado) {
-    return lado * lado
+  return lado * lado;
 }
-
-// console.log(`El area del cuadrado es: ${areaCuadrado}cm^2`)
-
-console.groupEnd()
 
 // code of triangle
-console.group("Triangulo")
-
-const ladoTriangulo1 = 6
-const ladoTriangulo2 = 6
-const baseTriangulo3 = 4
-
-console.log(
-    `Lados del triangulo miden: 
-    ${ladoTriangulo1}cm 
-    ${ladoTriangulo2}cm 
-    ${baseTriangulo3}cm`
-)
-
-const alturaTriangulo = 5.5
-
-console.log(`La altura del triangulo o es: ${alturaTriangulo}cm`)
-
 function perimetroTriangulo(lado1, lado2, base) {
-    return lado1 + lado2 + base
-} 
-
-// console.log(`El perímetro del triangulo es: ${perimetroTriangulo}cm`)
-
+  return lado1 + lado2 + base;
+}
 
 function areaTriangulo(base, altura) {
-    return (base * altura) / 2
-} 
-
-// console.log(`El area del triangulo es: ${areaTriangulo}cm^2`)
-
-console.groupEnd()
+  return (base * altura) / 2;
+}
 
 // code of circle
-console.group("Circunferencia")
- 
-// Radio
-// const radioCirculo = 4
-// console.log(`El radio del circulo es: ${radioCirculo}cm`)
-
 // Diámetro
 function diametroCirculo(radio) {
-    return radio * 2
+  return radio * 2;
 }
-// console.log(`El diámetro del circulo es: ${diametroCirculo}cm`)
 
 // PI
-const PI = Math.PI
-console.log(`PI es: ${PI}cm`)
+const PI = Math.PI;
+console.log(`PI es: ${PI}cm`);
 
 // Circunferencia
 function perimetroCirculo(radio) {
-    const diametro = diametroCirculo(radio)
-    return diametro * PI
+  const diametro = diametroCirculo(radio);
+  return diametro * PI;
 }
-// console.log(`El perimetro del circulo es: ${perimetroCirculo}cm`)
 
 // Área
 function areaCirculo(radio) {
-    return (radio * radio) * PI
+  return radio * radio * PI;
 }
-// console.log(`El área del circulo es: ${areaCirculo}cm^2`)
-
-console.groupEnd()
-
 
 // Connect with HTML
 function calcularPerimetroCuadrado() {
-    const input = document.getElementById("InputCuadrado")
-    const value = input.value
+  const input = document.getElementById("InputCuadrado");
+  const value = input.value;
 
-
-    const perimetro = perimetroCuadrado(value)
-    alert(perimetro)
+  const perimetro = perimetroCuadrado(value);
+  alert(perimetro);
 }
 
 function calcularAreaCuadrado() {
-    const input = document.getElementById("InputCuadrado")
-    const value = input.value
+  const input = document.getElementById("InputCuadrado");
+  const value = input.value;
+
+  const area = areaCuadrado(value);
+  alert(area);
+}
+
+function calcularPerimetroTriangulo() {
+  const inputBase = document.getElementById("InputTrianguloBase");
+  const inputLado = document.getElementById("InputTrianguloLado");
+  const lado = inputLado.value;
+  const base = inputBase.value;
+
+  const perimetro = perimetroTriangulo(lado, lado, base);
+  alert(perimetro);
+}
+
+function calcularAreaTriangulo() {
+  const inputBase = document.getElementById("InputTrianguloBase");
+  const inputLado = document.getElementById("InputTrianguloLado");
+
+  // hallar altura
+  const base = inputBase.value;
+  const lado = inputLado.value;
+  const altura = calcularAlturaTriangulo(lado, base);
+
+  const area = areaTriangulo(base, altura);
+  alert(area);
+}
+
+function calcularAlturaTriangulo(lado, base) {
+  return Math.sqrt(Math.pow(lado, 2) - Math.pow(base / 2, 2));
+}
+
+function calcularPerimetroCirculo() {
+  const inputRadio = document.getElementById("InputCirculoRadio");
+
+  const radio = inputRadio.value;
 
 
-    const area = areaCuadrado(value)
-    alert(area)
+  const perimetro = perimetroCirculo(radio);
+  alert(perimetro);
+}
+
+function calcularAreaCirculo() {
+  const inputRadio = document.getElementById("InputCirculoRadio");
+
+  const radio = inputRadio.value;
+
+  const area = areaCirculo(radio);
+  alert(area);
 }
