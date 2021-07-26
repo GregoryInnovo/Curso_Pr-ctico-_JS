@@ -67,14 +67,29 @@ function calcularPerimetroTriangulo() {
 function calcularAreaTriangulo() {
   const inputBase = document.getElementById("InputTrianguloBase");
   const inputLado = document.getElementById("InputTrianguloLado");
-
   // hallar altura
   const base = Number(inputBase.value);
   const lado = Number(inputLado.value);
+  // DeterminarTriangulo(lado, lado, base)
   const altura = calcularAlturaTriangulo(lado, base);
 
   const area = areaTriangulo(base, altura);
   alert(area);
+}
+
+function DeterminarTriangulo(lado1, lado2, lado3) {
+  // Determina si el primero es igual con algún otro
+  if(lado1 === lado2 || lado1 === lado3) {
+    if(lado1 === lado2 && lado1 != lado3) {
+      alert('Es un triángulo isósceles')
+      return calcularAlturaTriangulo(lado1, lado3)
+    } else if(lado1 === lado3 && lado1 != lado2) {
+      alert('Es un triángulo isósceles')
+      return calcularAlturaTriangulo(lado1, lado2)
+    }
+  } else {
+    alert('No es isósceles')
+  }
 }
 
 function calcularAlturaTriangulo(lado, base) {
