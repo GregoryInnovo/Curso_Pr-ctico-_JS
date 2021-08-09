@@ -1,5 +1,6 @@
 html {
-  background-color: #264e86;
+  /* background-color: #264e86; */
+  background: linear-gradient(0deg, rgba(255,99,90,1) 0%, rgba(0,188,228,1) 100%);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -10,14 +11,15 @@ body {
 }
 
 section {
-  background-color: #5e88fc;
+  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(224,248,252,0) 100%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 15px;
   padding: 12px;
   display: flex;
   flex-direction: column;
   text-align: center;
   margin-top: 16px;
-  width: 340px;
+  width: 70%;
 }
 
 h1,
@@ -29,6 +31,7 @@ label {
 
 label {
   font-weight: bold;
+  align-items: flex-end;
 }
 
 button {
@@ -42,8 +45,8 @@ button {
 }
 
 input {
-  background-color: #264e86;
-  border: 1px #74dbef solid;
+  background-color: transparent;
+  border: 1px #fff solid;
   color: white;
   text-align: center;
   border-radius: 12px;
@@ -56,6 +59,17 @@ input {
 ::placeholder {
   color: white;
   text-align: center;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.o-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* https://colorhunt.co/palette/afffff74dbef5e88fc264e86/?ref=tab */

@@ -14,13 +14,19 @@
     </header>
 
     <section>
-        <h2>Calcula el precio a pagar de tus productos con descuentos</h2>
-        <form>
+        <h2>Nintendo Switch</h2>
+        <form class="o-form">
+            <picture>
+                <img src="./my-dreams.png" />
+            </picture>
             <label for="InputPrice">Escribe el precio de tu producto:</label>
             <input id="InputPrice" type="number" placeholder="Número" />
 
             <label for="InputDiscount">Escribe el descuento de tu producto:</label>
-            <input id="InputDiscount" type="number" placeholder="Número"/>
+            <input id="InputDiscount" type="number" placeholder="Número %"/>
+
+            <label for="InputCoupon">Escribe el cupón:</label>
+            <input id="InputCoupon" type="text" placeholder="Cupón"/>
 
             <button type="button" onclick="onClickButtonPriceDiscount()">Calcular el precio con descuento</button>
             <p id="ResultPrice"></p>
@@ -28,5 +34,6 @@
     </section>
 
     <script src="./descuentos.js"></script>
+    
 </body>
 </html>

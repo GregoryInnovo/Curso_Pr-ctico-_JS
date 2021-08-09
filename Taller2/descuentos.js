@@ -24,8 +24,23 @@ function onClickButtonPriceDiscount() {
     const discountValue = Number(inputDiscount.value)
 
     const precioConDescuento = CalcularPrecioConDescuento(priceValue, discountValue)
-    
-    const resultP = document.getElementById("ResultPrice")
-    resultP.innerText = `El precio con descuento son: $${precioConDescuento}`
 
+    const inputCoupon = document.getElementById("InputCoupon")
+    const couponValue = inputCoupon.value
+    let finalRes = 0
+    const COUPON = "FREE"
+
+    if(couponValue == COUPON) {
+        finalRes = ValidateCoupon(precioConDescuento)
+        const resultP = document.getElementById("ResultPrice")
+        resultP.innerText = `El precio con descuento son: $${finalRes}`
+    } else {
+        const resultP = document.getElementById("ResultPrice")
+        resultP.innerText = `El precio con descuento son: $${precioConDescuento}`
+    }
+
+}
+
+function ValidateCoupon(precioConDescuento) {
+    return (precioConDescuento * 50) / 100
 }
